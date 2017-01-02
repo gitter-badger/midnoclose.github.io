@@ -2,6 +2,27 @@
 <html lang="en-US">
 <title>Midnoclo.se Beta</title>
 <body style="background-color:#ccffcc;">
+<?php
+
+require 'steamauth/steamauth.php';
+
+?>
+```
+And where you want the protected content to be:
+```php
+<?php
+if(!isset($_SESSION['steamid'])) {
+
+    loginbutton(); //login button
+
+}  else {
+
+    include ('steamauth/userInfo.php'); //To access the $steamprofile array
+    //Protected content
+
+    logoutbutton(); //Logout Button
+}     
+?>
 <h1><em>Dank Memes</em></h1>
 <p>Lol <a href="http://midnoclose.github.io" title="Why aren't you clicking?">Midnoclose</a> is cool. <i>E = mc<sup>2</sup></i></p>
 <p><bdo dir="rtl">Taco Cat Race Car</bdo></p>
